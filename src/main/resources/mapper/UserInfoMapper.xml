@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.shirodemo.cn.dao.UserInfoDao">
+
+    <sql id="the_base_column">
+        user_id as userId, user_name as userName, password as password
+    </sql>
+    <select id="getUserInfoById" resultType="com.example.shirodemo.cn.entity.UserInfo">
+        select
+        <include refid="the_base_column"></include>
+        from user_info t
+        where t.user_id  = #{userId}
+    </select>
+
+
+</mapper>
